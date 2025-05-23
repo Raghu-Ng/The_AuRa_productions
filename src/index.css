@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-aura-black text-white font-sans;
+  overflow-x: hidden;
+}
+
+.gold-text {
+  @apply text-aura-gold;
+}
+
+.section {
+  @apply min-h-screen w-full px-4 md:px-8 lg:px-16;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+.canvas-container {
+  @apply absolute inset-0 z-0 pointer-events-none;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8;
+}
+
+.section-subtitle {
+  @apply text-xl md:text-2xl font-serif text-aura-gold mb-6;
+}
+
+.btn {
+  @apply px-6 py-3 rounded-sm transition-all duration-300 text-sm uppercase tracking-wide;
+}
+
+.btn-primary {
+  @apply bg-aura-gold text-aura-black hover:bg-aura-goldLight font-medium;
+}
+
+.btn-outline {
+  @apply border border-aura-gold text-aura-gold hover:bg-aura-gold hover:text-aura-black;
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  @apply fixed w-8 h-8 rounded-full pointer-events-none z-50 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2;
+  background: rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.cursor-dot {
+  @apply fixed w-2 h-2 rounded-full bg-aura-gold pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(90deg, #D4AF37, #F2D675, #D4AF37);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 8s linear infinite;
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Horizontal scrolling sections */
+.horizontal-section {
+  @apply flex flex-nowrap;
+}
+
+.horizontal-section > * {
+  @apply flex-shrink-0;
+}
+
+/* Smooth transitions */
+.transition-all-custom {
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Parallax elements */
+.parallax {
+  @apply will-change-transform;
+  transform-style: preserve-3d;
+}
+
+/* Service card styling */
+.service-card {
+  @apply relative overflow-hidden rounded-md bg-aura-darkGreen p-6 border border-aura-gold/20 transition-all duration-500;
+}
+
+.service-card:hover {
+  @apply border-aura-gold/60 shadow-gold-md;
+}
+
+/* Hover effect for interactive elements */
+.hover-lift {
+  @apply transition-transform duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Portfolio item styling */
+.portfolio-item {
+  @apply relative overflow-hidden;
+}
+
+.portfolio-overlay {
+  @apply absolute inset-0 bg-aura-black/80 opacity-0 flex flex-col justify-center items-center transition-opacity duration-300 p-6;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  @apply opacity-100;
+}
